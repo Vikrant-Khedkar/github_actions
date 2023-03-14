@@ -1,0 +1,17 @@
+name: Create Pull Request
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+   create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          title: Automated Pull Request
+          body: Automated Pull Request
